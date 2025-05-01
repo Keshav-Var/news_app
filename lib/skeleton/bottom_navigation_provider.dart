@@ -17,10 +17,12 @@ class BottomNavigationProvider extends ChangeNotifier {
   }
 
   void setSelectedIndexByRoute(String route) {
-    if (route == '/home') {
+    if (route.contains('/home')) {
       _selectedIndex = 0;
-    } else if (route == '/saved_news') {
+    } else if (route.contains('/saved_news')) {
       _selectedIndex = 1;
+    } else {
+      _selectedIndex = 0;
     }
     notifyListeners();
   }

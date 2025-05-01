@@ -23,10 +23,7 @@ class DetailScreenProvider extends ChangeNotifier {
   }
 
   Future<void> toggleSaveNews(NewsEntity news) async {
-    final temp = await checkNews.call(SaveParam(news: news));
-    temp.fold((failure) {}, (isSavedResult) {
-      return;
-    });
+    if (_isSaved) return;
     final result = await saveNews.call(SaveParam(news: news));
     result.fold((failure) => null, (isSavedResult) => _isSaved = isSavedResult);
     notifyListeners();

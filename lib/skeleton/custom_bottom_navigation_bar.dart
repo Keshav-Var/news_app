@@ -16,7 +16,6 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   Widget build(BuildContext context) {
     BottomNavigationProvider provider = Provider.of<BottomNavigationProvider>(
       context,
-      listen: false,
     );
 
     return BottomNavigationBar(
